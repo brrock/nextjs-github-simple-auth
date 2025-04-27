@@ -7,7 +7,8 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"format": "prettier -w ."
+		"format": "prettier -w .",
+		"postinstall": "prisma generate"
 	},
 	"dependencies": {
 		"@oslojs/crypto": "^1.0.1",
