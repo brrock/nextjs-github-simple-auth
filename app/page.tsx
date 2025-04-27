@@ -18,7 +18,7 @@ export default async function Page() {
 			<h1>Hi, {user.username}!</h1>
 			<Image src={image} height="100" width="100" alt="profile" />
 			<p>Email: {user.email}</p>
-			<p> ID: {user.id}</p>
+			<p className="font-mono"> ID: {user.id}</p>
 			<LogoutButton />
 		</>
 	);
