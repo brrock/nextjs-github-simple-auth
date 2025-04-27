@@ -1,0 +1,29 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./sqlite.db" // Points to your existing database file
+}
+
+model User {
+  id        String       @id @default(uuid())
+  githubId  Int       @unique // Assuming GitHub IDs are unique
+  email     String    @unique
+  username  String
+  sessions  Session[] // Relation to Session model
+
+  @@map("user") // Maps to the existing 'user' table
+}
+
+model Session {
+  id        String   @id // Session ID is the primary key (hashed token)
+  userId    String
+  expiresAt DateTime
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade) // Relation to User model
+
+  @@map("session") // Maps to the existing 'session' table
+}
