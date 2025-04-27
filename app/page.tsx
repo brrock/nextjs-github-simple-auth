@@ -2,6 +2,7 @@ import { getCurrentSession } from "@/lib/server/session";
 import { redirect } from "next/navigation";
 import { LogoutButton } from "./components";
 import { globalGETRateLimit } from "@/lib/server/request";
+import Image from "next/image";
 
 export default async function Page() {
 	if (!globalGETRateLimit()) {
@@ -15,7 +16,7 @@ export default async function Page() {
 	return (
 		<>
 			<h1>Hi, {user.username}!</h1>
-			<img src={image} height="100px" width="100px" alt="profile" />
+			<Image src={image} height="100" width="100" alt="profile" />
 			<p>Email: {user.email}</p>
 			<p> ID: {user.id}</p>
 			<LogoutButton />
