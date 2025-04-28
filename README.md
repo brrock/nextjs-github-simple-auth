@@ -1,6 +1,6 @@
 # GitHub OAuth example in Next.js
 
-Uses SQLite and prisma. Rate limiting is implemented using JavaScript `Map`.
+Uses Postgres and Prisma. Rate limiting is implemented using JavaScript `Map`.
 
 ## Initialize project
 
@@ -27,4 +27,4 @@ Run the application:
 ```
 bun dev
 ```
-
+Based on amazing template by lucia auth [here](https://github.com/lucia-auth/example-nextjs-github-oauth)

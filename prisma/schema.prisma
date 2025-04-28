@@ -5,8 +5,8 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./sqlite.db" // Points to your existing database file
+  provider = "postgres"
+  url      = env("DATABASE_URL") 
 }
 
 model User {
